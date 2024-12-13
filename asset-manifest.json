@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/blush-notes/static/css/main.1bd332e2.css",
+    "main.js": "/blush-notes/static/js/main.5de1af36.js",
+    "index.html": "/blush-notes/index.html",
+    "main.1bd332e2.css.map": "/blush-notes/static/css/main.1bd332e2.css.map",
+    "main.5de1af36.js.map": "/blush-notes/static/js/main.5de1af36.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1bd332e2.css",
+    "static/js/main.5de1af36.js"
+  ]
+}
