@@ -38,8 +38,8 @@ const THEMES = {
       inputBackground: 'bg-white'
     }
   },
-  cherryCola: {
-    name: 'Cherry Cola',
+  deltaGamma: {
+    name: 'Delta Gamma',
     classes: {
       primary: 'bg-slate-900',
       primaryHover: 'hover:bg-slate-800',
@@ -49,7 +49,7 @@ const THEMES = {
       text: 'text-pink-200',
       folderText: 'text-pink-300',
       noteBackground: 'bg-slate-900',
-      noteBorder: 'border-slate-800',
+      noteBorder: 'border-slate-700',
       noteText: 'text-pink-200',
       mainBackground: 'bg-slate-950',
       inputBorder: 'border-slate-700',
@@ -199,7 +199,7 @@ const NotesApp = () => {
                 onClick={() => setSelectedFolder(folder)}
                 className="flex items-center flex-grow"
               >
-                <Folder size={16} className="mr-2" />
+                <Folder size={16} className={`mr-2 ${theme === 'cherryCola' ? 'text-amber-400' : ''}`} />
                 {folder}
               </button>
               <button
@@ -226,7 +226,7 @@ const NotesApp = () => {
         ) : (
           <button
             onClick={() => setShowNewFolderInput(true)}
-            className="mt-4 flex items-center text-pink-500 hover:text-pink-600 px-3 py-2"
+            className={`mt-4 flex items-center ${theme === 'cherryCola' ? 'text-amber-400 hover:text-amber-300' : 'text-pink-500 hover:text-pink-600'} px-3 py-2`}
           >
             <Plus size={16} className="mr-1" /> New Folder
           </button>
@@ -256,7 +256,7 @@ const NotesApp = () => {
             <button
               onClick={addNote}
               className={`w-full ${currentTheme.primary} text-white py-2 px-4 rounded-lg 
-                ${currentTheme.primaryHover} transition-colors duration-200`}
+                ${currentTheme.primaryHover} transition-colors duration-200 ${theme === 'cherryCola' ? 'border border-amber-400' : ''}`}
             >
               {editingIndex !== null ? 'Save changes' : 'Add note'}
             </button>
@@ -288,13 +288,13 @@ const NotesApp = () => {
                   <div className="flex gap-3 flex-shrink-0">
                     <button
                       onClick={() => editNote(index)}
-                      className={`${currentTheme.folderText} hover:text-pink-500 transition-colors`}
+                      className={`${theme === 'cherryCola' ? 'text-amber-400 hover:text-amber-300' : `${currentTheme.folderText} hover:text-pink-500`} transition-colors`}
                     >
                       <PenLine size={18} />
                     </button>
                     <button
                       onClick={() => deleteNote(index)}
-                      className={`${currentTheme.folderText} hover:text-pink-500 transition-colors`}
+                      className={`${theme === 'cherryCola' ? 'text-amber-400 hover:text-amber-300' : `${currentTheme.folderText} hover:text-pink-500`} transition-colors`}
                     >
                       <Trash2 size={18} />
                     </button>
